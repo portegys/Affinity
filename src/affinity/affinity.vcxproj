@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{58CEE92F-F667-483F-952D-1B92AB8B6DFC}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>11.0.60610.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>Debug\</OutDir>
+    <IntDir>Debug\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>Release\</OutDir>
+    <IntDir>Release\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\include ..\..\include\win32;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;AFFINITY_MAIN;MD5_ID;THREADS;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>..\..\lib\sxmlguid.lib;..\..\lib\win32\glut32.lib;..\..\lib\win32\pthreadVC2.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>..\..\bin\affinity.exe</OutputFile>
+      <IgnoreSpecificDefaultLibraries>libcd.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(OutDir)affinity.pdb</ProgramDatabaseFile>
+      <SubSystem>Console</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention />
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\..\include ..\..\include\win32;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;AFFINITY_MAIN;MD5_ID;THREADS;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>..\..\lib\sxmlgui.lib;..\..\lib\win32\glut32.lib;..\..\lib\win32\pthreadVC2.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>..\..\bin\affinity.exe</OutputFile>
+      <IgnoreSpecificDefaultLibraries>libc.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention />
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\utility\baseObject.cpp" />
+    <ClCompile Include="..\utility\camera.cpp" />
+    <ClCompile Include="..\utility\fileio.cpp" />
+    <ClCompile Include="..\utility\frameRate.cpp" />
+    <ClCompile Include="..\utility\frustum.cpp" />
+    <ClCompile Include="..\utility\gettime.cpp" />
+    <ClCompile Include="..\utility\log.cpp" />
+    <ClCompile Include="..\utility\md5.cpp" />
+    <ClCompile Include="..\utility\octree.cpp" />
+    <ClCompile Include="..\utility\quaternion.cpp" />
+    <ClCompile Include="..\utility\random.cpp" />
+    <ClCompile Include="..\utility\spacial.cpp" />
+    <ClCompile Include="..\chemistry\atom.cpp" />
+    <ClCompile Include="..\chemistry\body.cpp" />
+    <ClCompile Include="..\chemistry\chemistry.cpp" />
+    <ClCompile Include="..\chemistry\molecule.cpp" />
+    <ClCompile Include="..\chemistry\parameters.cpp" />
+    <ClCompile Include="..\chemistry\thermal.cpp" />
+    <ClCompile Include="affinity.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\utility\baseObject.hpp" />
+    <ClInclude Include="..\utility\camera.hpp" />
+    <ClInclude Include="..\utility\fileio.h" />
+    <ClInclude Include="..\utility\frameRate.hpp" />
+    <ClInclude Include="..\utility\frustum.hpp" />
+    <ClInclude Include="..\utility\gettime.h" />
+    <ClInclude Include="..\utility\log.hpp" />
+    <ClInclude Include="..\utility\matrix.hpp" />
+    <ClInclude Include="..\utility\md5.h" />
+    <ClInclude Include="..\utility\octree.hpp" />
+    <ClInclude Include="..\utility\quaternion.hpp" />
+    <ClInclude Include="..\utility\random.hpp" />
+    <ClInclude Include="..\utility\spacial.hpp" />
+    <ClInclude Include="..\utility\vector.hpp" />
+    <ClInclude Include="..\chemistry\atom.hpp" />
+    <ClInclude Include="..\chemistry\body.hpp" />
+    <ClInclude Include="..\chemistry\chemistry.hpp" />
+    <ClInclude Include="..\chemistry\molecule.hpp" />
+    <ClInclude Include="..\chemistry\parameters.hpp" />
+    <ClInclude Include="..\chemistry\thermal.hpp" />
+    <ClInclude Include="affinity.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

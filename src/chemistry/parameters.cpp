@@ -1,0 +1,137 @@
+/*
+ * This software is provided under the terms of the GNU General
+ * Public License as published by the Free Software Foundation.
+ *
+ * Copyright (c) 2006-2007 Tom Portegys, All Rights Reserved.
+ * Permission to use, copy, modify, and distribute this software
+ * and its documentation for NON-COMMERCIAL purposes and without
+ * fee is hereby granted provided that this copyright notice
+ * appears in all copies.
+ *
+ * THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESSED OR IMPLIED
+ * WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+ * OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ * DISCLAIMED.
+ */
+
+/*
+ * Affinity chemistry parameters.
+ */
+
+#include "parameters.hpp"
+using namespace affinity;
+
+// Default parameter values.
+const float Parameters::DEFAULT_MIN_ATOM_INITIAL_FORCE        = 5.0f;
+const float Parameters::DEFAULT_MAX_ATOM_INITIAL_FORCE        = 20.0f;
+const int Parameters::  DEFAULT_MIN_NUCLEUS_PROTONS           = 1;
+const int Parameters::  DEFAULT_MAX_NUCLEUS_PROTONS           = 20;
+const float Parameters::DEFAULT_PROTON_MASS                   = 1.0f;
+const float Parameters::DEFAULT_ELECTRON_MASS                 = 0.1f;
+const float Parameters::DEFAULT_PROTON_CHARGE                 = 1.0f;
+const float Parameters::DEFAULT_ELECTRON_CHARGE               = -1.0f;
+const float Parameters::DEFAULT_CHARGE_GAUSSIAN_SPREAD        = 1.0f;
+const float Parameters::DEFAULT_NUCLEUS_BODY_RADIUS           = 0.5f;
+const float Parameters::DEFAULT_ORBITAL_BODY_RADIUS           = 0.25f;
+const float Parameters::DEFAULT_MAX_BODY_RANGE                = 5.0f;
+const float Parameters::DEFAULT_BOND_LENGTH                   = 1.0f;
+const float Parameters::DEFAULT_BOND_STIFFNESS                = 2.0f;
+const float Parameters::DEFAULT_BOND_DAMPER                   = 0.05f;
+const float Parameters::DEFAULT_NUCLEAR_REPULSION_STIFFNESS   = 2.0f;
+const float Parameters::DEFAULT_COVALENT_BONDING_RANGE        = 2.0f;
+const float Parameters::DEFAULT_MIN_COVALENT_BOND_FORCE       = 2.0f;
+const float Parameters::DEFAULT_COVALENT_BOND_STIFFNESS_SCALE = 1.0f;
+const float Parameters::DEFAULT_MIN_THERMAL_RADIUS            = 1.5f;
+const float Parameters::DEFAULT_MAX_THERMAL_RADIUS            = 4.0f;
+const float Parameters::DEFAULT_MIN_THERMAL_TEMPERATURE       = 0.0f;
+const float Parameters::DEFAULT_MAX_TEMPERATURE               = 10.0f;
+const float Parameters::DEFAULT_UPDATE_STEP                   = 0.01f;
+
+// Constructor.
+Parameters::Parameters()
+{
+   MIN_ATOM_INITIAL_FORCE        = DEFAULT_MIN_ATOM_INITIAL_FORCE;
+   MAX_ATOM_INITIAL_FORCE        = DEFAULT_MAX_ATOM_INITIAL_FORCE;
+   MIN_NUCLEUS_PROTONS           = DEFAULT_MIN_NUCLEUS_PROTONS;
+   MAX_NUCLEUS_PROTONS           = DEFAULT_MAX_NUCLEUS_PROTONS;
+   PROTON_MASS                   = DEFAULT_PROTON_MASS;
+   ELECTRON_MASS                 = DEFAULT_ELECTRON_MASS;
+   PROTON_CHARGE                 = DEFAULT_PROTON_CHARGE;
+   ELECTRON_CHARGE               = DEFAULT_ELECTRON_CHARGE;
+   CHARGE_GAUSSIAN_SPREAD        = DEFAULT_CHARGE_GAUSSIAN_SPREAD;
+   NUCLEUS_BODY_RADIUS           = DEFAULT_NUCLEUS_BODY_RADIUS;
+   ORBITAL_BODY_RADIUS           = DEFAULT_ORBITAL_BODY_RADIUS;
+   MAX_BODY_RANGE                = DEFAULT_MAX_BODY_RANGE;
+   BOND_LENGTH                   = DEFAULT_BOND_LENGTH;
+   BOND_STIFFNESS                = DEFAULT_BOND_STIFFNESS;
+   BOND_DAMPER                   = DEFAULT_BOND_DAMPER;
+   NUCLEAR_REPULSION_STIFFNESS   = DEFAULT_NUCLEAR_REPULSION_STIFFNESS;
+   COVALENT_BONDING_RANGE        = DEFAULT_COVALENT_BONDING_RANGE;
+   MIN_COVALENT_BOND_FORCE       = DEFAULT_MIN_COVALENT_BOND_FORCE;
+   COVALENT_BOND_STIFFNESS_SCALE = DEFAULT_COVALENT_BOND_STIFFNESS_SCALE;
+   MIN_THERMAL_RADIUS            = DEFAULT_MIN_THERMAL_RADIUS;
+   MAX_THERMAL_RADIUS            = DEFAULT_MAX_THERMAL_RADIUS;
+   MIN_THERMAL_TEMPERATURE       = DEFAULT_MIN_THERMAL_TEMPERATURE;
+   MAX_TEMPERATURE               = DEFAULT_MAX_TEMPERATURE;
+   UPDATE_STEP                   = DEFAULT_UPDATE_STEP;
+}
+
+
+// Load.
+void Parameters::load(FILE *fp)
+{
+   FREAD_FLOAT(&MIN_ATOM_INITIAL_FORCE, fp);
+   FREAD_FLOAT(&MAX_ATOM_INITIAL_FORCE, fp);
+   FREAD_INT(&MIN_NUCLEUS_PROTONS, fp);
+   FREAD_INT(&MAX_NUCLEUS_PROTONS, fp);
+   FREAD_FLOAT(&PROTON_MASS, fp);
+   FREAD_FLOAT(&ELECTRON_MASS, fp);
+   FREAD_FLOAT(&PROTON_CHARGE, fp);
+   FREAD_FLOAT(&ELECTRON_CHARGE, fp);
+   FREAD_FLOAT(&CHARGE_GAUSSIAN_SPREAD, fp);
+   FREAD_FLOAT(&NUCLEUS_BODY_RADIUS, fp);
+   FREAD_FLOAT(&ORBITAL_BODY_RADIUS, fp);
+   FREAD_FLOAT(&MAX_BODY_RANGE, fp);
+   FREAD_FLOAT(&BOND_LENGTH, fp);
+   FREAD_FLOAT(&BOND_STIFFNESS, fp);
+   FREAD_FLOAT(&BOND_DAMPER, fp);
+   FREAD_FLOAT(&NUCLEAR_REPULSION_STIFFNESS, fp);
+   FREAD_FLOAT(&COVALENT_BONDING_RANGE, fp);
+   FREAD_FLOAT(&MIN_COVALENT_BOND_FORCE, fp);
+   FREAD_FLOAT(&COVALENT_BOND_STIFFNESS_SCALE, fp);
+   FREAD_FLOAT(&MIN_THERMAL_RADIUS, fp);
+   FREAD_FLOAT(&MAX_THERMAL_RADIUS, fp);
+   FREAD_FLOAT(&MIN_THERMAL_TEMPERATURE, fp);
+   FREAD_FLOAT(&MAX_TEMPERATURE, fp);
+   FREAD_FLOAT(&UPDATE_STEP, fp);
+}
+
+
+// Save.
+void Parameters::save(FILE *fp)
+{
+   FWRITE_FLOAT(&MIN_ATOM_INITIAL_FORCE, fp);
+   FWRITE_FLOAT(&MAX_ATOM_INITIAL_FORCE, fp);
+   FWRITE_INT(&MIN_NUCLEUS_PROTONS, fp);
+   FWRITE_INT(&MAX_NUCLEUS_PROTONS, fp);
+   FWRITE_FLOAT(&PROTON_MASS, fp);
+   FWRITE_FLOAT(&ELECTRON_MASS, fp);
+   FWRITE_FLOAT(&PROTON_CHARGE, fp);
+   FWRITE_FLOAT(&ELECTRON_CHARGE, fp);
+   FWRITE_FLOAT(&CHARGE_GAUSSIAN_SPREAD, fp);
+   FWRITE_FLOAT(&NUCLEUS_BODY_RADIUS, fp);
+   FWRITE_FLOAT(&ORBITAL_BODY_RADIUS, fp);
+   FWRITE_FLOAT(&MAX_BODY_RANGE, fp);
+   FWRITE_FLOAT(&BOND_LENGTH, fp);
+   FWRITE_FLOAT(&BOND_STIFFNESS, fp);
+   FWRITE_FLOAT(&BOND_DAMPER, fp);
+   FWRITE_FLOAT(&NUCLEAR_REPULSION_STIFFNESS, fp);
+   FWRITE_FLOAT(&COVALENT_BONDING_RANGE, fp);
+   FWRITE_FLOAT(&MIN_COVALENT_BOND_FORCE, fp);
+   FWRITE_FLOAT(&COVALENT_BOND_STIFFNESS_SCALE, fp);
+   FWRITE_FLOAT(&MIN_THERMAL_RADIUS, fp);
+   FWRITE_FLOAT(&MAX_THERMAL_RADIUS, fp);
+   FWRITE_FLOAT(&MIN_THERMAL_TEMPERATURE, fp);
+   FWRITE_FLOAT(&MAX_TEMPERATURE, fp);
+   FWRITE_FLOAT(&UPDATE_STEP, fp);
+}

@@ -1,0 +1,55 @@
+﻿  XMLUtils.cpp
+  TimeUtils.cpp
+  TextureUtils.cpp
+  GLee.cpp
+  GenUtils.cpp
+  GUITextBox.cpp
+  GUIText.cpp
+  GUITexCoordDescriptor.cpp
+  GUITabbedPanel.cpp
+  GUISlider.cpp
+  GUISeparator.cpp
+  GUIRectangle.cpp
+  GUIRadioButton.cpp
+  GUIPanel.cpp
+  GUILabel.cpp
+  GUIFrame.cpp
+  GUIFontManager.cpp
+  GUIFont.cpp
+  GUIEvent.cpp
+  GUIComboBox.cpp
+  Generating Code...
+  Compiling...
+  GUIClippedRectangle.cpp
+  GUICheckBox.cpp
+  GUIButton.cpp
+  GUIAlphaElement.cpp
+  Generating Code...
+  Font.cpp
+  pngtrans.c
+  pngset.c
+  pngrutil.c
+  pngrtran.c
+  pngrio.c
+  pngread.c
+  pngpread.c
+  pngmem.c
+  pngget.c
+  pngerror.c
+  png.c
+  zutil.c
+  infutil.c
+  inftrees.c
+  inflate.c
+  inffast.c
+  infcodes.c
+  infblock.c
+  crc32.c
+  adler32.c
+  Generating Code...
+  Compiling...
+  glpng.c
+  Generating Code...
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(1357,5): warning MSB8012: TargetPath(C:\Users\Tom Portegys\Downloads\affinity\src\gui\Debug\sxmlgui.lib) does not match the Library's OutputFile property value (C:\Users\Tom Portegys\Downloads\affinity\lib\sxmlguid.lib). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Lib.OutputFile).
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(1359,5): warning MSB8012: TargetName(sxmlgui) does not match the Library's OutputFile property value (sxmlguid). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Lib.OutputFile).
+  sxmlgui.vcxproj -> C:\Users\Tom Portegys\Downloads\affinity\src\gui\Debug\sxmlgui.lib

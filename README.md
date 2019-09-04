@@ -1,2 +1,0 @@
-# affinity
-Affinity artificial chemistry
