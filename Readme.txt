@@ -3,6 +3,10 @@ Affinity artificial chemistry
 An architecture for an artificial chemistry featuring 3D
 continuous physics and and chemical covalent bonding.
 
+The "Affinity" artificial chemistry system is a search for interesting (e.g. auto-catalytic) chemical reactions and systems. 
+It is loosely based on the VSEPR (Valence Shell Electron Pair Repulsion) chemistry model. Affinity has a number of tunable 
+parameters, e.g. electron mass, orbital radii, etc.
+
 Required packages:
 
 OpenGL graphics and the GLUT package are required to build and
